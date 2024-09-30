@@ -122,7 +122,7 @@ class Solution {
         inOrderTraversal(root.left,arr);
         arr.add(root.data);
         inOrderTraversal(root.right,arr);
-    }
-    
+            
         
+    }
 }
