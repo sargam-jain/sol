@@ -28,17 +28,16 @@ public class Main {
 
 class Solution {
     public int getSecondLargest(int[] arr) {
-        
-        Set<Integer> set = new HashSet<>();
-        for(int i=0;i<arr.length;i++){
-            set.add(arr[i]);
+        int n = arr.length;
+        Arrays.sort(arr);
+        int i = n-1;
+        while(i>0){
+            if(arr[i] == arr[i-1]){
+                i--;
+            }else{
+                return arr[i-1];
+            }
         }
-        ArrayList<Integer> list = new ArrayList<>(set);
-        Collections.sort(list);
-        int n = list.size();
-        if(n-2 == - 1){
-            return -1;
-        }
-        return list.get(n-2);
+        return -1;
     }
 }
