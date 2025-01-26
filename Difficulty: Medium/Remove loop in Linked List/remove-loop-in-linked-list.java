@@ -82,9 +82,9 @@ class GFG {
                 System.out.println("false");
             else
                 System.out.println("true");
-        
-System.out.println("~");
-}
+
+            System.out.println("~");
+        }
     }
 }
 
@@ -103,21 +103,18 @@ class Solution {
     // Function to remove a loop in the linked list.
     public static void removeLoop(Node head) {
         // code here
-        // remove the loop without losing any nodes
-        HashSet<Node> set = new HashSet<>();
-        Node prev = null;
-        Node curr = head;
-        while(curr != null){
-            if(set.contains(curr)){
-                prev.next = null;
-                return;
-                
-            }
-            else{
-                set.add(curr);
-                prev=curr;
-                curr=curr.next;
-            }
-        }
+       HashSet<Node> set = new HashSet<>();
+       Node curr = head;
+       Node temp = null;
+       while(curr != null){
+           if(set.contains(curr)){
+               temp.next = null;
+               return;
+           }else{
+               set.add(curr);
+           }
+           temp = curr;
+           curr = curr.next;
+       }
     }
 }
